@@ -1,0 +1,17 @@
+# Mysql 注意替换相应配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/xunwu
+    username: root
+    password: 123456
+
+  # redis config
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    pool:
+    min-idle: 1
+    timeout: 3000
+
