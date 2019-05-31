@@ -26,11 +26,11 @@ public class HandleBeanUtils {
      * @return
      */
     public static <F> List<Object> entityToList(F entity) {
-        List<Object> returnList = null;
-        logger.debug("entityToModel : Entity属性的值赋值到Model");
         if (entity == null) {
             return null;
         }
+        List<Object> returnList = null;
+        logger.debug("entityToModel : Entity属性的值转换为List");
         Class<?> aClass = entity.getClass();
         Field[] declaredFields = aClass.getDeclaredFields();
         if (declaredFields.length > 0) {
@@ -52,7 +52,30 @@ public class HandleBeanUtils {
     }
 
 
-    public static  List<String>
+    /**
+     * 把实体类的属性名转换为List集合
+     *
+     * @param c
+     * @return
+     */
+    public static List<String> entityAttributeNamesToList(Class c) {
+
+        if (c == null) {
+            return null;
+        }
+        logger.debug("entityToModel : Entity属性名转换为List");
+        Field[] declaredFields = c.getDeclaredFields();
+        if (declaredFields.length > 0) {
+
+            List<String> collect = Arrays.stream(declaredFields).map(field -> {
+
+                return field.getName();
+            }).collect(Collectors.toList());
+            return collect;
+        }
+
+        return null;
+    }
 
     // 把一个字符串的第一个字母大写、效率是最高的、
     private static String getMethodName(String fildeName) throws Exception {

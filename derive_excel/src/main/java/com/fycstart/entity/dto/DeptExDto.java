@@ -1,39 +1,54 @@
 package com.fycstart.entity.dto;
 
-import java.time.LocalDateTime;
+import com.alibaba.excel.annotation.ExcelProperty;
+import com.alibaba.excel.metadata.BaseRowModel;
+
+import java.util.Date;
 
 /**
  * @author fyc
  * @description: TODO
  * @date 2019/5/22下午 2:06
  */
-public class DeptDto {
+public class DeptExDto extends BaseRowModel {
 
+    @ExcelProperty(value = "id", index = 0)
     private Integer id;
 
+    @ExcelProperty(value = "部门名称", index = 1)
     private String deptName;
 
+    @ExcelProperty(value = "地址", index = 2)
     private String address;
 
+    @ExcelProperty(value = "ceo", index = 3)
     private Integer ceo;
 
-
+    @ExcelProperty(value = "姓名", index = 4)
     private String testName;
 
-    private LocalDateTime testDate;
+    @ExcelProperty(value = "时间", index = 5,format = "yyyy-MM-dd")
+    private Date testDate;
 
+    @ExcelProperty(value = "年龄", index = 6)
     private String testAge;
 
+    @ExcelProperty(value = "测试地址", index = 7)
     private String testAddress;
 
+    @ExcelProperty(value = "测试城市", index = 8)
     private String testCity;
 
+    @ExcelProperty(value = "测试血型", index = 9)
     private String testBlood;
 
+    @ExcelProperty(value = "测试宗教", index = 10)
     private String testReligion;
 
+    @ExcelProperty(value = "测试国家", index = 11)
     private String testNation;
 
+    @ExcelProperty(value = "测试价格", index = 12)
     private String testMoney;
 
 
@@ -77,11 +92,11 @@ public class DeptDto {
         this.testName = testName;
     }
 
-    public LocalDateTime getTestDate() {
+    public Date getTestDate() {
         return testDate;
     }
 
-    public void setTestDate(LocalDateTime testDate) {
+    public void setTestDate(Date testDate) {
         this.testDate = testDate;
     }
 

@@ -5,12 +5,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fycstart.entity.HouseDetail;
 import com.fycstart.mapper.HouseDetailMapper;
 import com.fycstart.service.HouseDetailService;
-import com.fycstart.web.dto.HouseDetailDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
